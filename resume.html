@@ -1,20 +1,7 @@
 <html>
 	<head>
+        <title>Patrick Cockwell - uWaterloo Software Engineering 2014</title>
 		<style>
-			@media print{
-				body{
-					font-size: 14;
-				}
-				.name{
-					font-size: 32;
-				}
-				.section .title{
-					font-size: 18;
-				}
-				.company{
-					font-size: 16;
-				}
-			}
 			body{
 				background-color: #DDDDDD;
 				font-family: arial;
@@ -70,6 +57,26 @@
 			.time{
 				text-align: right;
 			}
+			@media print{
+				body{
+					font-size: 13;
+				}
+				.name{
+					font-size: 32;
+				}
+				.section .title{
+					font-size: 18;
+				}
+				.company{
+					font-size: 16;
+				}
+                .pagebreak{
+					page-break-before: always;
+                }
+                .notprint{
+					display: none;
+                }
+			}
 		</style>
 	</head>
 	<body>
@@ -94,6 +101,7 @@
 						<li><b>PHP</b>: Over 4 years of experience obtained working on projects including Orion, AuToDo, RoomClerk, and various analytics dashboards</li>
 						<li><b>SQL</b>: Over 4 years of experience gained working on a wide range of tools and tasks</li>
 						<li><b>Python</b>: Over 2 years of usage and experimentation for scripts and applications within the workplace and on personal tasks</li>
+						<li><b>Lua</b>: Approximately 12 months of usage and experience while working on Heroes of Newerth Artificial Intelligence Bots</li>
 						<li><b>Java & C/C++</b>: Approximately 12 months of experience gained while working on school related projects and assignments</li>
 						<li>Very experienced with <b>HTML</b>, <b>CSS</b>, <b>Javascript</b></li>
 					</ul>
@@ -119,7 +127,7 @@
 			</div>
 		</div>
 		<div class='separator' ></div>
-		<div class='section'>
+		<div class='section pagebreak'>
 			<div class='title'>Relevant Projects</div>
 			<div class='job'>
 				<table class='job_details'>
@@ -134,6 +142,22 @@
 						<li>Building a web API that uses scheduling algorithms, dependency graph reduction, and location analysis to systematically build a daily schedule for users</li>
 						<li>Developing the API with Laravel</li>
 						<li>Once complete, the system will allow for simple and seamless integrating with Google Calendar to provide a daily schedule that reminds and prompts users to complete the tasks listed</li>
+					</ul>
+				</div>
+			</div>
+			<div class='job'>
+				<table class='job_details'>
+					<tr><td class='company'>Heroes of Newerth AI Bots</td></tr>
+					<tr>
+						<td class='position'>Artificial Intelligence Bots</td>
+						<td class='time'>February 2013 - Present</td>
+					</tr>
+				</table>
+				<div class='content'>
+					<ul>
+						<li>Developed the Soul Reaper AI bot that was approved, and included in the retail game</li>
+						<li>Member of the AI Bot Team, a group of community members that discuss, review, and approve other community bots before they are sent to S2 Games for final approval and inclusion in the game</li>
+						<li>Developed multiple algorithms that have been integrated as general behaviors for all bots</li>
 					</ul>
 				</div>
 			</div>
@@ -191,7 +215,7 @@
 					</ul>
 				</div>
 			</div>
-			<div class='job'>
+			<div class='job pagebreak'>
 				<table class='job_details'>
 					<tr><td class='company'>GREE International Inc./Funzio Inc.</td></tr>
 					<tr>
@@ -251,6 +275,7 @@
 					<li>Github: <a href="https://github.com/pcockwell/">https://github.com/pcockwell/</a></li>
 					<li>Orion Analytics: <a href="https://github.com/gree/Orion">https://github.com/gree/Orion</a></li>
 					<li>Strife Website: <a href="http://www.strife.com">http://www.strife.com</a></li>
+					<li>Heroes of Newerth AI Bots: <a href="https://github.com/s2games/Heroes-of-Newerth-Bots">https://github.com/s2games/Heroes-of-Newerth-Bots</a></li>
 				</ul>
 			</div>
 		</div>
