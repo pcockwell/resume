@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>Patrick Cockwell - uWaterloo Software Engineering</title>
+    <script src="https://kit.fontawesome.com/745128ef3d.js" crossorigin="anonymous"></script>
     <style>
       body{
         background-color: #DDDDDD;
@@ -25,7 +26,31 @@
       .program{
         font-size: 32;
       }
-      .section .title{
+      .header > .info {
+        display: table;
+        width: 80%;
+        margin: 10px 10%;
+      }
+      .header > .info > .item {
+        display: table-cell;
+        width: 30%;
+        text-align: center;
+        vertical-align: middle;
+      }
+      .header > .info > .item > div {
+        display: inline-block;
+        height: 20px;
+        vertical-align: middle;
+      }
+      .header > .info .icon {
+        display: inline-block;
+        color: #0077BB;
+        font-size: 20px;
+      }
+      .section.bio {
+        text-align: center;
+      }
+      .section > .title{
         font-size: 20;
         text-transform: uppercase;
         font-weight: bold;
@@ -64,7 +89,23 @@
         .name{
           font-size: 32;
         }
-        .section .title{
+        .header > .info {
+          margin: 5px 10%;
+          }
+        .header > .info > .item {
+          width: unset;
+        }
+        .header > .info > .item > div {
+          display: inline-block;
+          height: 18px;
+          vertical-align: middle;
+        }
+        .header > .info .icon {
+          display: inline-block;
+          color: #0077BB;
+          font-size: 18px;
+        }
+        .section > .title{
           font-size: 18;
         }
         .company{
@@ -81,14 +122,25 @@
   </head>
   <body>
     <div class='header' >
-    <div class='name' >Patrick <span class='special_text'>Cockwell</span></div>
-    <div class='program'><span class='special_text'>Software</span> Engineer</div>
-      <div>Address: To Be Determined, Thailand</div>
-      <div>E-mail: pcockwell@gmail.com</div>
-      <div>Phone: ‪408-461-5344‬</div>
+      <div class='name' >Patrick <span class='special_text'>Cockwell</span></div>
+      <div class='program'><span class='special_text'>Software</span> Engineer</div>
+      <div class='info'>
+        <div class='item'>
+          <i class='icon fas fa-home'></i>
+          <div>Chiang Mai, Thailand</div>
+        </div>
+        <div class='item'>
+          <i class='icon fas fa-at'></i>
+          <div>pcockwell@gmail.com</div>
+        </div>
+        <div class='item'>
+          <i class='icon fas fa-mobile-alt'></i>
+          <div>+66 092-460-0545</div>
+        </div>
+      </div>
     </div>
     <div class='separator' ></div>
-    <div class='section'>
+    <div class='section bio'>
       I graduated University of Waterloo with a Bachelor of Software Engineering and am very interested in DevOps, infrastructure management. I also have a strong interest in internal engineering enablement through the development of tooling and processes to improve the productivity and velocity of a development team.
     </div>
     <div class='separator' ></div>
