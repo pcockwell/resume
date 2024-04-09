@@ -50,6 +50,9 @@
       .section.bio {
         text-align: center;
       }
+      .section.education {
+        margin-bottom: 20px;
+      }
       .section > .title{
         font-size: 20;
         text-transform: uppercase;
@@ -89,6 +92,10 @@
         height: 80px;
         width: 80px;
       }
+      a.certificate{
+        text-decoration: none;
+        color: inherit;
+      }
       @media print{
         body{
           font-size: 13;
@@ -111,6 +118,9 @@
           display: inline-block;
           color: #0077BB;
           font-size: 18px;
+        }
+        .section.education {
+          margin-bottom: none;
         }
         .section > .title{
           font-size: 18;
@@ -155,10 +165,10 @@
     </div>
     <div class='separator' ></div>
     <div class='section bio'>
-      I graduated University of Waterloo with a Bachelor of Software Engineering and am very interested in DevOps and infrastructure management. I also have a strong interest in internal engineering enablement through the development of tooling and processes to improve the productivity and velocity of a development team.
+      I am DevOps Engineer with a Bachelor's of Software Engineering from the University of Waterloo. My specializations include infrastructure management, internal engineering enablement, and automated tooling and processes. I strive to improve the productivity and velocity of all development teams I work with and strengthen the stability and reliabilty of our systems.
     </div>
     <div class='separator' ></div>
-    <div class='section'>
+    <div class='section skills'>
       <div class='title'>Skills and Qualifications</div>
       <div class='content'>
         <ul class='no-bullet' >
@@ -166,14 +176,14 @@
           <ul>
             <li>Very experienced with several <b>GCP</b> tools including <b>Cloud Storage</b>, <b>Bigquery</b>, <b>Kubernetes Engine</b>, and <b>IAM</b></li>
             <li>Familiar with several <b>Amazon Web Services</b> tools including <b>S3</b>, <b>EC2</b>, <b>Route53</b>, <b>IAM</b>, and <b>Lambda</b></li>
-            <li>Solid grasp of <b>Kubernetes</b>, and deployment of applications using <b>GitOps</b>, <b>Kustomize</b>, <b>Helm</b> and <b>ArgoCD</b></li>
+            <li>Very strong grasp of <b>Kubernetes</b>, and deployment of applications using <b>GitOps</b>, <b>Kustomize</b>, <b>Helm</b> and <b>ArgoCD</b></li>
             <li>Well versed with infrastructure management tools such as <b>Terraform</b>, <b>Terragrunt</b>, <b>Atlantis</b> and <b>Ansible</b></li>
             <li>Strong understanding of <b>ETL</b> and <b>Data Warehousing</b> platforms including extensive usage of <b>Airflow</b></li>
           </ul>
           <li>Languages</li>
           <ul>
             <li><b>Terraform</b>: Over 8 years of experience working against AWS and GCP resources, including recently released products</li>
-            <li><b>YAML</b>: Over 7 years of experience working on Kubernetes applications and Kubernetes YAML manifests, including <b>Kustomize</b> and <b>Helm</b></li>
+            <li><b>YAML</b>: Over 8 years of experience working on Kubernetes applications and Kubernetes YAML manifests, including <b>Kustomize</b> and <b>Helm</b></li>
             <li><b>SQL</b>: Over 10 years of experience working with tools including <b>MySQL</b> and <b>PostgreSQL</b></li>
             <li><b>Python</b>: More than 10 years of usage and experimentation for scripts and ETL platforms</li>
             <li><b>Javascript</b>: More than 10 years of development on various frameworks</li>
@@ -182,13 +192,13 @@
           <ul>
             <li>Comfortable working in team environments and very experienced working on small teams</li>
             <li>Passionate about computer programming, gaming, and particularly DevOps and infrastructure management</li>
-            <li><b>Fully bilingual</b>, and fluent in English and French</li>
+            <li>Fluent in <b>English</b> and <b>French</b>, along with a basic grasp of <b>German</b></li>
           </ul>
         </ul>
       </div>
     </div>
     <div class='separator' ></div>
-    <div class='section'>
+    <div class='section projects'>
       <div class='title'>Relevant Projects</div>
       <div class='job'>
         <table class='job_details'>
@@ -224,7 +234,7 @@
     </div>
     <div class='separator' ></div>
     <div class='pagebreak' ></div>
-    <div class='section'>
+    <div class='section work_experience'>
       <div class='title'>Work Experience</div>
       <div class='job'>
         <table class='job_details'>
@@ -294,24 +304,41 @@
       </div>
     </div>
     <div class='separator' ></div>
-    <div class='section'>
+    <div class='section certifications'>
       <div class='title'>Certifications</div>
       <div class='job'>
         <table class='job_details'>
           <tr>
             <td class='certificate-badge'>
-              <a href='https://google.accredible.com/b884a5a4-cae6-4788-bce4-54f006d725f2' target='_blank'>
-                <img src='https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/89811711' />
+              <a href='https://www.credly.com/badges/29b1635b-8e48-4c88-8960-635f63f2e7e7/public_url' target='_blank'>
+                <img src='https://images.credly.com/size/220x220/images/8b8ed108-e77d-4396-ac59-2504583b9d54/cka_from_cncfsite__281_29.png' />
               </a>
             </td>
-            <td class='company'>Google Cloud DevOps Engineer</td>
+            <td class='company'>
+              <a class='certificate' href='https://www.credly.com/badges/29b1635b-8e48-4c88-8960-635f63f2e7e7/public_url' target='_blank'>
+                CNCF Certified Kubernetes Administrator
+              </a>
+            </td>
+            <td class='time'>April 2024</td>
+          </tr>
+          <tr>
+            <td class='certificate-badge'>
+              <a href='https://www.credly.com/badges/d8cfc978-4178-41b7-b641-2479accdb6e6/public_url' target='_blank'>
+                <img src='https://images.credly.com/size/220x220/images/33f08b7e-fa6a-41cd-810a-21cc1c336f6d/image.png' />
+              </a>
+            </td>
+            <td class='company'>
+              <a class='certificate' href='https://www.credly.com/badges/d8cfc978-4178-41b7-b641-2479accdb6e6/public_url' target='_blank'>
+                Google Cloud DevOps Engineer
+              </a>
+            </td>
             <td class='time'>December 2023</td>
           </tr>
         </table>
       </div>
     </div>
     <div class='separator' ></div>
-    <div class='section'>
+    <div class='section education'>
       <div class='title'>Education</div>
       <div class='job'>
         <table class='job_details'>
@@ -321,12 +348,6 @@
             <td class='time'>September 2009 - March 2015</td>
           </tr>
         </table>
-        <div class='content'>
-          <ul>
-            <li>Received a total of 2 years of workplace experience through the University of Waterloo Co-op Program</li>
-            <li>Course work included Data Structures and Data Management, Algorithms, Concurrency, Database Management, Numerical Computation, Artificial Intelligence, Cryptography and System Security, and Computer Intelligence</li>
-          </ul>
-        </div>
       </div>
     </div>
   </body>
