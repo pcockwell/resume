@@ -1,0 +1,448 @@
+<html>
+  <head>
+    <title>Patrick Cockwell - Senior DevOps Engineer</title>
+    <script src='https://kit.fontawesome.com/745128ef3d.js' crossorigin='anonymous'></script>
+    <style>
+      body{
+        background-color: #DDDDDD;
+        font-family: arial;
+        margin: 0 10%;
+      }
+      .special_text{
+        color: #0077BB;
+      }
+      .separator{
+        margin: 10px auto;
+        width: 95%;
+        height: 2px;
+        border-bottom: 1px solid #BBBBBB;
+      }
+      .header{
+        text-align: center;
+      }
+      .name{
+        font-size: 40;
+      }
+      .program{
+        font-size: 32;
+      }
+      .header > .info {
+        display: table;
+        width: 80%;
+        margin: 10px 10%;
+      }
+      .header > .info > .item {
+        display: table-cell;
+        width: 30%;
+        text-align: center;
+        vertical-align: middle;
+      }
+      .header > .info > .item > div {
+        display: inline-block;
+        height: 20px;
+        vertical-align: middle;
+      }
+      .header > .info .icon {
+        display: inline-block;
+        color: #0077BB;
+        font-size: 20px;
+      }
+      .section.bio {
+        text-align: center;
+      }
+      .section.education {
+        margin-bottom: 20px;
+      }
+      .section > .title{
+        font-size: 20;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-bottom: 6px;
+      }
+      ul.no-bullet{
+        list-style-type: none;
+        margin-left: 2%;
+        padding-left: 0px;
+      }
+      ul.no-bullet > li{
+        margin: 5px 0px;
+      }
+      ul:not(.no-bullet), ul:not(.no-bullet) li{
+        margin-left: 2%;
+        padding-left: 0px;
+        list-style-type: disc;
+      }
+      .job_details{
+        width: 100%;
+        font-weight: bold;
+      }
+      .company{
+        font-size: 18;
+      }
+      .position{
+        text-align: left;
+      }
+      .time{
+        text-align: right;
+      }
+      .certificate-badge{
+        width: 80px;
+      }
+      .certificate-badge > a > img{
+        height: 80px;
+        width: 80px;
+      }
+      a.certificate{
+        text-decoration: none;
+        color: inherit;
+      }
+      @media print{
+        body{
+          font-size: 13;
+        }
+        .name{
+          font-size: 32;
+        }
+        .header > .info {
+          margin: 5px 10%;
+          }
+        .header > .info > .item {
+          width: unset;
+        }
+        .header > .info > .item > div {
+          display: inline-block;
+          height: 18px;
+          vertical-align: middle;
+        }
+        .header > .info .icon {
+          display: inline-block;
+          color: #0077BB;
+          font-size: 18px;
+        }
+        .section.education {
+          margin-bottom: none;
+        }
+        .section > .title{
+          font-size: 18;
+        }
+        .company{
+          font-size: 16;
+        }
+        .pagebreak{
+          page-break-before: always;
+        }
+        .separator.pagebreak {
+          border: none;
+        }
+        .notprint{
+          display: none;
+        }
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class='header' >
+      <div class='name' >Patrick <span class='special_text'>Cockwell</span></div>
+      <div class='program'><span class='special_text'>DevOps</span> Engineer</div>
+      <div class='info'>
+        <div class='item'>
+          <i class='icon fas fa-home'></i>
+          <div>Los Angeles, California</div>
+        </div>
+        <div class='item'>
+          <i class='icon fas fa-at'></i>
+          <div>pcockwell@gmail.com</div>
+        </div>
+        <div class='item'>
+          <i class='icon fas fa-mobile-alt'></i>
+          <div>+1 805 588 3391</div>
+        </div>
+      </div>
+    </div>
+    <div class='separator' ></div>
+    <div class='section bio'>
+      I am DevOps Engineer with a Bachelor's of Software Engineering from the University of Waterloo. My specializations include infrastructure management, internal engineering enablement, and automated tooling and processes. I strive to improve the productivity and velocity of all development teams I work with and strengthen the stability and reliabilty of our systems.
+    </div>
+    <div class='separator' ></div>
+    <div class='section skills'>
+      <div class='title'>Skills and Qualifications</div>
+      <div class='content'>
+        <ul class='no-bullet'>
+          <li>Tools and Software</li>
+          <ul>
+            <li>Very experienced with several <b>GCP</b> tools including <b>Cloud Storage</b>, <b>Bigquery</b>,
+              <b>Kubernetes Engine</b>, and <b>IAM</b></li>
+            <li>Highly proficient with <b>Amazon Web Services</b> tools including <b>EKS</b>, <b>RDS</b>, <b>S3</b>,
+              <b>EC2</b>, <b>Route53</b>, <b>IAM</b>, and <b>Lambda</b></li>
+            <li>Very strong grasp of <b>Kubernetes</b>, and deployment of applications using <b>GitOps</b>,
+              <b>Kustomize</b>, <b>Helm</b> and <b>ArgoCD</b></li>
+            <li>Well versed with infrastructure management tools such as <b>Terraform</b>, <b>Terragrunt</b>,
+              <b>Atlantis</b> and <b>Ansible</b></li>
+            <li>Extensive experience with observability and monitoring platforms including <b>Grafana</b>,
+              <b>Prometheus</b>, <b>Loki</b>, <b>Mimir</b>, <b>Tempo</b>, <b>Pyroscope</b>, and <b>AllQuiet/PagerDuty</b></li>
+          </ul>
+          <li>Languages</li>
+          <ul>
+            <li><b>Terraform</b>: Over 9 years of experience working against AWS and GCP resources, including recently
+              released products</li>
+            <li><b>YAML</b>: Over 9 years of experience working on Kubernetes applications and Kubernetes YAML manifests,
+              including <b>Kustomize</b> and <b>Helm</b></li>
+            <li><b>SQL</b>: Over 10 years of experience working with tools including <b>MySQL</b> and <b>PostgreSQL</b></li>
+            <li><b>Python</b>: More than 10 years of usage and experimentation for scripts and ETL platforms</li>
+            <li><b>Javascript</b>: More than 10 years of development on various frameworks</li>
+          </ul>
+          <li>Other Qualifications</li>
+          <ul>
+            <li>Comfortable working in team environments and very experienced working on small teams</li>
+            <li>Passionate about computer programming, gaming, and particularly DevOps and infrastructure management</li>
+            <li>Fluent in <b>English</b> and <b>French</b>, along with a basic grasp of <b>German</b></li>
+          </ul>
+        </ul>
+      </div>
+    </div>
+    <div class='separator' ></div>
+    <div class='section projects'>
+      <div class='title'>Relevant Projects</div><div class='job'>
+        <table class='job_details'>
+          <tr>
+            <td class='company'>Full-Stack Monitoring Infrastructure</td>
+          </tr>
+          <tr>
+            <td class='position'>Comprehensive Telemetry & Alerting</td>
+            <td class='time'>January 2025 - August 2025</td>
+          </tr>
+        </table>
+        <div class='content'>
+          <ul>
+            <li>Implemented comprehensive monitoring stack with Prometheus, AlertManager, Grafana, Loki, Mimir, Tempo, and
+              Pyroscope</li>
+            <li>Configured alerting infrastructure and established oncall rotation management from scratch using AllQuiet
+              platform</li>
+            <li>Educated development teams and stakeholders on monitoring best practices and effective observability
+              utilization</li>
+          </ul>
+        </div>
+      </div>
+      <div class='job'>
+        <table class='job_details'>
+          <tr><td class='company'>Continuous Delivery using GitOps & ArgoCD</td></tr>
+          <tr>
+            <td class='position'>Rapid & Consistent Kubernetes Deployments</td>
+            <td class='time'>November 2024 - August 2025</td>
+          </tr>
+        </table>
+        <div class='content'>
+          <ul>
+            <li>Implemented ArgoCD for continuous deployments and delivery across all operational tooling in all environments</li>
+            <li>Refactored all Kubernetes application manifests to standardized structure and cleanup redundancies</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class='separator' ></div>
+    <div class='pagebreak' ></div>
+    <div class='section work_experience'>
+      <div class='title'>Work Experience</div>
+      <div class='job'>
+        <table class='job_details'>
+          <tr>
+            <td class='company'>NoBS Tech</td>
+          </tr>
+          <tr>
+            <td class='position'>Senior Observability Engineer</td>
+            <td class='time'>December 2025 - April 2026</td>
+          </tr>
+        </table>
+        <div class='content'>
+          <ul>
+            <li>Enhanced data collection, visibility and alerting capabilities on Datadog across multiple client engagements simultaneously</li>
+            <li>Identified and implemented cost optimization strategies for Datadog monitoring and alerting</li>
+            <li>Introduced AI-enabled development tools internally and developed custom workflows tailored to the company's needs</li>
+          </ul>
+        </div>
+      </div>
+      <div class='job'>
+        <table class='job_details'>
+          <tr>
+            <td class='company'>ReMatter Inc.</td>
+          </tr>
+          <tr>
+            <td class='position'>Senior DevOps Engineer</td>
+            <td class='time'>July 2024 - August 2025</td>
+          </tr>
+        </table>
+        <div class='content'>
+          <ul>
+            <li>Modernized developer infrastructure by deploying ArgoCD for GitOps application management</li>
+            <li>Built enterprise observability platform with full telemetry stack (Grafana, Prometheus, Loki, Mimir, Tempo, Alertmanager, OnCall)</li>
+            <li>Led company-wide infrastructure assessment delivering strategic recommendations across all DevOps domains</li>
+          </ul>
+        </div>
+      </div>
+      <div class='job'>
+        <table class='job_details'>
+          <tr>
+            <td class='company'>Activision Blizzard Media</td>
+          </tr>
+          <tr>
+            <td class='position'>Senior DevOps Engineer</td>
+            <td class='time'>August 2021 - July 2024</td>
+          </tr>
+        </table>
+        <div class='content'>
+          <ul>
+            <li>Developed CICD infrastructure and pipelines for code testing and deployment</li>
+            <li>Modelled existing and new infrastructure needs using Terraform and Terragrunt to standardize infrastructure
+              management</li>
+            <li>Managed distributed computing systems using Kubernetes, Kustomize, Helm, and ArgoCD</li>
+          </ul>
+        </div>
+      </div>
+      <div class='job'>
+        <table class='job_details'>
+          <tr><td class='company'>Freefall Consulting Inc.</td></tr>
+          <tr>
+            <td class='position'>Owner/Contractor/Developer</td>
+            <td class='time'>June 2020 - July 2021</td>
+          </tr>
+        </table>
+        <div class='content'>
+          <ul>
+            <li>Worked on prominent <a href='https://github.com/edx/edx-platform' target='_blank'>edX</a> open-source software project</li>
+            <li>Provisioned infrastructure and codifying architecture in Terraform module code</li>
+          </ul>
+        </div>
+      </div>
+      <div class='job'>
+        <table class='job_details'>
+          <tr><td class='company'>Flyr Inc.</td></tr>
+          <tr>
+            <td class='position'>Data/DevOps Engineer</td>
+            <td class='time'>May 2018 - March 2020</td>
+          </tr>
+        </table>
+        <div class='content'>
+          <ul>
+            <li>Led the development effort for the Flyr ETL data platform</li>
+            <li>Implemented a full redesign of GCP resource architectures using Terraform that enabled deployment of new client infrastructure on demand</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class='separator' ></div>
+    <div class='section certifications'>
+      <div class='title'>Certifications</div>
+      <div class='job'>
+        <table class='job_details'>
+          <tr class='notprint'>
+            <td class='certificate-badge'>
+              <a href='https://www.credly.com/badges/6ed39ad9-fd22-4c2a-8ff6-f3fe3f776ffa/public_url' target='_blank'>
+                <img
+                  src='https://images.credly.com/size/220x220/images/77d92dec-5c60-447b-8326-c592812f2483/blob' />
+              </a>
+            </td>
+            <td class='company'>
+              <a class='certificate' href='https://www.credly.com/badges/6ed39ad9-fd22-4c2a-8ff6-f3fe3f776ffa/public_url'
+                target='_blank'>
+                Datadog Certified: Datadog Fundamentals
+              </a>
+            </td>
+            <td class='time'>April 2026</td>
+          </tr>
+          <tr class='notprint'>
+            <td class='certificate-badge'>
+              <a href='https://www.credly.com/badges/039ad468-f5b7-4b71-b4b6-4fab8bf32bf7/public_url' target='_blank'>
+                <img
+                  src='https://images.credly.com/size/220x220/images/1435c0bc-5a70-4618-a65f-b5da82d29fd2/blob' />
+              </a>
+            </td>
+            <td class='company'>
+              <a class='certificate' href='https://www.credly.com/badges/039ad468-f5b7-4b71-b4b6-4fab8bf32bf7/public_url'
+                target='_blank'>
+                Datadog Certified: APM & Distributed Tracing Fundamentals
+              </a>
+            </td>
+            <td class='time'>February 2026</td>
+          </tr>
+          <tr class='notprint'>
+            <td class='certificate-badge'>
+              <a href='https://www.credly.com/badges/5a390a57-595f-4227-b5ca-ebde6706c3f9/public_url' target='_blank'>
+                <img
+                  src='https://images.credly.com/size/220x220/images/3d3f7131-83a4-4427-8a68-150ca90bcc23/blob' />
+              </a>
+            </td>
+            <td class='company'>
+              <a class='certificate' href='https://www.credly.com/badges/5a390a57-595f-4227-b5ca-ebde6706c3f9/public_url'
+                target='_blank'>
+                CNCF OpenTelemetry Certified Associate
+              </a>
+            </td>
+            <td class='time'>March 2025</td>
+          </tr>
+          <tr>
+            <td class='certificate-badge'>
+              <a href='https://www.credly.com/badges/f4cfab46-340a-469c-87c5-15eab267f1ad/public_url' target='_blank'>
+                <img
+                  src='https://images.credly.com/size/220x220/images/0dc62494-dc94-469a-83af-e35309f27356/blob' />
+              </a>
+            </td>
+            <td class='company'>
+              <a class='certificate' href='https://www.credly.com/badges/f4cfab46-340a-469c-87c5-15eab267f1ad/public_url'
+                target='_blank'>
+                HashiCorp Certified: Terraform Associate
+              </a>
+            </td>
+            <td class='time'>April 2024</td>
+          </tr>
+          <tr>
+            <td class='certificate-badge'>
+              <a href='https://www.credly.com/badges/29b1635b-8e48-4c88-8960-635f63f2e7e7/public_url' target='_blank'>
+                <img
+                  src='https://images.credly.com/size/220x220/images/8b8ed108-e77d-4396-ac59-2504583b9d54/cka_from_cncfsite__281_29.png' />
+              </a>
+            </td>
+            <td class='company'>
+              <a class='certificate' href='https://www.credly.com/badges/29b1635b-8e48-4c88-8960-635f63f2e7e7/public_url'
+                target='_blank'>
+                CNCF Certified Kubernetes Administrator
+              </a>
+            </td>
+            <td class='time'>April 2024</td>
+          </tr>
+          <tr class='notprint'>
+            <td class='certificate-badge'>
+              <a href='https://www.credly.com/badges/66a3e1d4-798f-4e44-a010-faf2ddffcea8/public_url' target='_blank'>
+                <img
+                  src='https://images.credly.com/size/220x220/images/cc8adc83-1dc6-4d57-8e20-22171247e052/blob' />
+              </a>
+            </td>
+            <td class='company'>
+              <a class='certificate' href='https://www.credly.com/badges/66a3e1d4-798f-4e44-a010-faf2ddffcea8/public_url'
+                target='_blank'>
+                CNCF Certified Kubernetes Application Developer
+              </a>
+            </td>
+            <td class='time'>June 2024</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class='separator' ></div>
+    <div class='section education'>
+      <div class='title'>Education</div>
+      <div class='job'>
+        <table class='job_details'>
+          <tr><td class='company'>University Of Waterloo</td></tr>
+          <tr>
+            <td class='position'>Bachelor of Software Engineering (BSE)</td>
+            <td class='time'>September 2009 - March 2015</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
