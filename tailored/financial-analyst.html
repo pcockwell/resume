@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Patrick Cockwell — Financial Analyst Candidate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/745128ef3d.js" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --navy:    #0D1B2A;
+      --accent:  #1B6CA8;
+      --accent2: #14A0C0;
+      --muted:   #5A6A7A;
+      --rule:    #CBD5E0;
+      --bg:      #F0F4F8;
+      --card:    #FFFFFF;
+      --tag-bg:  #E3EEF8;
+      --tag-fg:  #1B6CA8;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 20px;
+      background: var(--navy);
+      color: var(--navy);
+      line-height: 1.55;
+    }
+
+    /* ─── SCREEN WRAPPER ─── */
+    .page-wrap {
+      max-width: 100%;
+      margin: 0;
+      background: var(--card);
+      overflow: hidden;
+    }
+
+    /* ─── CONTENT LIMITER ─── */
+    .content-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ─── HEADER ─── */
+    .header {
+      background: var(--navy);
+      color: #fff;
+      padding: 44px 60px 34px;
+      position: relative;
+      overflow: hidden;
+    }
+    .header-top {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 60px;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+      color: #fff;
+    }
+    .name span { color: var(--accent2); }
+    .title {
+      font-size: 19px;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-top: 6px;
+    }
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 22px;
+      margin-top: 20px;
+      font-size: 18px;
+      color: rgba(255,255,255,0.75);
+    }
+    .contact-row a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+    }
+    .contact-row .ci {
+      color: var(--accent2);
+      margin-right: 5px;
+    }
+
+    /* ─── MAIN BODY ─── */
+    .body {
+      padding: 32px 60px 44px;
+      background: var(--card);
+    }
+
+    /* ─── BIO ─── */
+    .bio {
+      font-size: 19px;
+      color: var(--muted);
+      line-height: 1.65;
+      border-left: 3px solid var(--accent2);
+      padding-left: 14px;
+      margin-bottom: 26px;
+    }
+
+    /* ─── SECTION ─── */
+    .section { margin-bottom: 26px; }
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 19px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      border-bottom: 1.5px solid var(--rule);
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+    }
+
+    /* ─── EXP STAT ─── */
+    .exp-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      flex-shrink: 0;
+      border-left: 2px solid rgba(20,160,192,0.4);
+      padding-left: 16px;
+    }
+    .exp-stat-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 54px;
+      line-height: 1;
+      color: var(--accent2);
+      letter-spacing: -1px;
+    }
+    .exp-stat-label {
+      font-size: 14.5px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-top: 3px;
+    }
+
+    /* ─── SKILLS GRID ─── */
+    /* Outer grid: category rows */
+    .skills-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    /* Each row: label on left, tags on right */
+    .skill-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 0 12px;
+      align-items: start;
+    }
+    .skill-row-label {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-top: 3px;
+    }
+    /* Platform rows have a nested sub-structure */
+    .platform-block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .platform-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .platform-name {
+      font-size: 15px;
+      font-weight: 700;
+      font-family: 'DM Mono', monospace;
+      color: var(--accent);
+      background: rgba(27,108,168,0.1);
+      border: 1px solid rgba(27,108,168,0.25);
+      padding: 1px 7px;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .tag {
+      background: var(--tag-bg);
+      color: var(--tag-fg);
+      font-size: 16px;
+      font-weight: 500;
+      font-family: 'DM Mono', monospace;
+      padding: 2px 8px;
+      border-radius: 3px;
+    }
+
+    /* ─── JOB / PROJECT ENTRIES ─── */
+    .entry { margin-bottom: 14px; }
+    .entry:last-child { margin-bottom: 0; }
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .entry-company {
+      font-weight: 600;
+      font-size: 20px;
+      color: var(--navy);
+    }
+    .entry-date {
+      font-size: 16.5px;
+      font-family: 'DM Mono', monospace;
+      color: var(--muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .entry-role {
+      font-size: 18px;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+    .entry ul {
+      padding-left: 16px;
+      font-size: 18px;
+      color: var(--muted);
+    }
+    .entry ul li { margin-bottom: 2px; }
+    .entry ul li b, .entry ul li strong { color: var(--navy); font-weight: 600; }
+
+    /* ─── CERTIFICATIONS ─── */
+    .cert-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .cert-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12.5px;
+    }
+    .cert-badge img {
+      height: 42px;
+      width: 42px;
+      border-radius: 4px;
+    }
+    .cert-badge { flex-shrink: 0; }
+    .cert-name {
+      font-weight: 500;
+      color: var(--navy);
+    }
+    .cert-name a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .cert-name a:hover { text-decoration: underline; color: var(--accent); }
+    .cert-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      margin-left: auto;
+      white-space: nowrap;
+    }
+
+    /* ─── EDUCATION ─── */
+    .edu-item .entry-role { margin-bottom: 1px; }
+
+    /* ─── DIVIDER ─── */
+    hr.divider {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 0 0 22px;
+    }
+
+    /* ─── BOTTOM SECTION: CERTS + EDUCATION stacked layout ─── */
+    .bottom-section {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    /* Cert grid: 3 cards per row */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .cert-card {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--rule);
+      border-radius: 5px;
+      background: #FAFCFF;
+      transition: border-color 0.15s;
+    }
+    .cert-card:hover { border-color: var(--accent); }
+    .cert-badge img {
+      height: 38px;
+      width: 38px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+    .cert-badge { flex-shrink: 0; }
+    .cert-info { flex: 1; min-width: 0; }
+    .cert-name {
+      font-weight: 500;
+      font-size: 17px;
+      color: var(--navy);
+      line-height: 1.3;
+    }
+    .cert-name a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .cert-name a:hover { color: var(--accent); }
+    .cert-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 15px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    /* Education sits in its own row below certs */
+    .edu-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 16px;
+      border: 1px solid var(--rule);
+      border-radius: 5px;
+      background: #FAFCFF;
+    }
+    .edu-icon {
+      font-size: 22px;
+      color: var(--accent2);
+      flex-shrink: 0;
+      width: 32px;
+      text-align: center;
+    }
+    .edu-details {}
+    .edu-school {
+      font-weight: 600;
+      font-size: 20px;
+      color: var(--navy);
+    }
+    .edu-degree {
+      font-size: 18px;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .edu-years {
+      font-family: 'DM Mono', monospace;
+      font-size: 16px;
+      color: var(--muted);
+      margin-top: 1px;
+    }
+    /* keep old .two-col for print fallback */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 36px;
+    }
+    .two-col .section { margin-bottom: 0; }
+
+    /* ═══════════════════════════════════════
+       PRINT STYLES — strict 2-page layout
+    ═══════════════════════════════════════ */
+    @media print {
+      @page {
+        size: letter;
+        margin: 14mm 16mm 14mm 16mm;
+      }
+
+      html, body {
+        background: #fff !important;
+        font-size: 10pt;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page-wrap {
+        max-width: 100%;
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0;
+      }
+
+      .header {
+        padding: 18px 24px 14px;
+      }
+      .header::after {
+        content: '';
+        position: absolute;
+        right: -60px; top: -60px;
+        width: 280px; height: 280px;
+        border-radius: 50%;
+        background: rgba(27,108,168,0.18);
+        pointer-events: none;
+      }
+      .name { font-size: 28pt; }
+      .title { font-size: 8pt; }
+      .contact-row { margin-top: 10px; font-size: 8pt; }
+
+      .body { padding: 14px 20px 18px; }
+
+      .bio { font-size: 9pt; margin-bottom: 12px; }
+
+      .section { margin-bottom: 15px; }
+      .section-title { font-size: 9.5pt; margin-bottom: 5px; }
+
+      .exp-stat-num { font-size: 26px; }
+      .exp-stat-label { font-size: 7pt; }
+
+      .skills-grid { gap: 6px; }
+      .skill-row { grid-template-columns: 140px 1fr; gap: 0 8px; }
+      .skill-row-label { font-size: 8.5pt; }
+      .platform-name { font-size: 9pt; padding: 2px 6px; }
+      .tag { font-size: 9pt; padding: 2px 7px; }
+      .platform-group { gap: 5px; }
+      .lang-item { font-size: 8pt; }
+      .lang-name { min-width: 72px; }
+
+      .entry { margin-bottom: 8px; }
+      .entry-company { font-size: 10.5pt; }
+      .entry-role { font-size: 9pt; margin-bottom: 2px; }
+      .entry-date { font-size: 8pt; }
+      .entry ul { font-size: 8.5pt; }
+      .entry ul li { margin-bottom: 1px; }
+
+      .cert-grid { grid-template-columns: repeat(2, 1fr); gap: 8pt; }
+      .cert-card { padding: 7pt 11pt; gap: 10pt; }
+      .cert-badge img { height: 30pt; width: 30pt; }
+      .cert-name { font-size: 9.5pt; line-height: 1.3; }
+      .cert-date { font-size: 8.5pt; margin-top: 2pt; }
+      .edu-row { padding: 8px 10px; }
+      .edu-school { font-size: 10pt; }
+      .edu-degree { font-size: 9pt; }
+      .edu-years { font-size: 7.5pt; }
+
+      /* page break before work experience */
+      .page-break-before { page-break-before: always; }
+
+      .content-inner { max-width: 100%; }
+      a { color: inherit !important; text-decoration: none !important; }
+    }
+
+    /* ─── TAILORED ADDITIONS ─── */
+    .cert-compact { display: flex; flex-wrap: wrap; gap: 6px 8px; }
+    .cert-compact a { text-decoration: none; }
+    .cert-compact .tag { font-family: 'DM Sans', sans-serif; }
+    .early-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0 10px;
+      margin-bottom: 8px;
+    }
+    .early-head { font-weight: 600; font-size: 18px; color: var(--navy); }
+    .early-head span { font-weight: 500; color: var(--accent); }
+    .early-desc { grid-column: 1 / -1; font-size: 17px; color: var(--muted); }
+    .entry, .early-item, .edu-row { break-inside: avoid; }
+    .section-title { break-after: avoid; }
+    @media print {
+      .cert-compact .tag { font-size: 8.5pt; }
+      .early-item { margin-bottom: 4px; }
+      .early-head { font-size: 9.5pt; }
+      .early-desc { font-size: 8.5pt; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+
+    <!-- ─── HEADER ─── -->
+    <header class="header">
+      <div class="content-inner">
+      <div class="header-top">
+        <div>
+          <div class="name">Patrick <span>Cockwell</span></div>
+          <div class="title">Data Analysis &middot; Reporting &middot; Automation</div>
+        </div>
+        <div class="exp-stat">
+          <div class="exp-stat-num">10+</div>
+          <div class="exp-stat-label">Years SQL &amp; Python</div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <span><i class="ci fas fa-map-marker-alt"></i>Los Angeles, California</span>
+        <span><i class="ci fas fa-at"></i>pcockwell&#64;gmail.com</span>
+        <span><i class="ci fas fa-mobile-alt"></i>+1 805 588 3391</span>
+      </div>
+      </div><!-- /content-inner -->
+    </header>
+
+    <!-- ─── BODY ─── -->
+    <div class="body">
+      <div class="content-inner">
+
+      <!-- BIO -->
+      <p class="bio">
+        Analytical engineer (Waterloo BSE) with 10+ years building data platforms, reporting tools, and automation that drive accurate, cost-aware decisions. Now bringing <strong>SQL</strong>, <strong>Python</strong>, and <strong>AI automation</strong> skills to budgeting, forecasting, and financial reporting.
+      </p>
+
+      <!-- SKILLS -->
+      <div class="section">
+        <div class="section-title">Skills &amp; Tools</div>
+        <div class="skills-grid">
+
+          <div class="skill-row">
+            <div class="skill-row-label">Data &amp; Analysis</div>
+            <div class="tag-list">
+              <span class="tag">SQL</span>
+              <span class="tag">Python</span>
+              <span class="tag">BigQuery</span>
+              <span class="tag">Redshift</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Airflow</span>
+              <span class="tag">ETL Pipelines</span>
+              <span class="tag">Data Warehousing</span>
+            </div>
+          </div>
+
+          <div class="skill-row">
+            <div class="skill-row-label">BI &amp; Visualization</div>
+            <div class="tag-list">
+              <span class="tag">Grafana</span>
+              <span class="tag">Datadog Dashboards</span>
+              <span class="tag">Trend &amp; Anomaly Alerting</span>
+            </div>
+          </div>
+
+          <div class="skill-row">
+            <div class="skill-row-label">Cost Management</div>
+            <div class="tag-list">
+              <span class="tag">Usage &amp; Spend Analysis</span>
+              <span class="tag">Vendor Cost Optimization</span>
+            </div>
+          </div>
+
+          <div class="skill-row">
+            <div class="skill-row-label">AI &amp; Automation</div>
+            <div class="tag-list">
+              <span class="tag">Claude Code</span>
+              <span class="tag">Cursor</span>
+              <span class="tag">Notion AI</span>
+              <span class="tag">Workflow Automation</span>
+            </div>
+          </div>
+
+          <div class="skill-row">
+            <div class="skill-row-label">Spoken</div>
+            <div class="tag-list">
+              <span class="tag">English (native)</span>
+              <span class="tag">French (fluent)</span>
+              <span class="tag">German (basic)</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PROJECTS -->
+      <div class="section">
+        <div class="section-title">Relevant Projects</div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-company">AI-Powered Workflow Automation</div>
+            <div class="entry-date">Jan 2026 – Apr 2026</div>
+          </div>
+          <div class="entry-role">Process Automation &amp; AI Enablement</div>
+          <ul>
+            <li>Built <strong>AI-enabled skills and automated workflows</strong> (Claude Code &amp; Claude Desktop) for recurring manual tasks</li>
+            <li>Set up a private internal marketplace so teams could find and reuse automations from one shared, maintained source</li>
+            <li>Trained engineers and <strong>non-technical team members</strong> to apply AI tools to their own day-to-day work</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-company">Centralized Reporting &amp; Dashboard Platform</div>
+            <div class="entry-date">Jan 2025 – Aug 2025</div>
+          </div>
+          <div class="entry-role">Data Visualization &amp; Stakeholder Reporting</div>
+          <ul>
+            <li>Built <strong>Grafana</strong> dashboards unifying data from several systems into a single view</li>
+            <li>Designed alerting that flags unusual trends and deviations from expected levels, and routes them to the right owner</li>
+            <li>Ran training sessions teaching engineering teams and <strong>non-technical stakeholders</strong> to read the data and act on it</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- WORK EXPERIENCE -->
+      <div class="section">
+        <div class="section-title">Work Experience</div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-company">NoBS Tech</div>
+            <div class="entry-date">Dec 2025 – Apr 2026</div>
+          </div>
+          <div class="entry-role">Senior Observability Engineer</div>
+          <ul>
+            <li>Analyzed <strong>Datadog usage and spend</strong> and implemented <strong>cost-optimization strategies</strong> for clients</li>
+            <li>Met with clients to understand their needs, then built custom solutions across several engagements at once</li>
+            <li>Improved data collection and visibility so clients had accurate, complete operational reporting</li>
+            <li>Introduced <strong>AI-assisted tooling</strong> and built custom internal workflows to automate repetitive work</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-company">ReMatter Inc.</div>
+            <div class="entry-date">Jul 2024 – Aug 2025</div>
+          </div>
+          <div class="entry-role">Senior DevOps Engineer</div>
+          <ul>
+            <li>Led a <strong>company-wide assessment</strong> of infrastructure, tooling, and processes and delivered strategic recommendations</li>
+            <li>Built the company's reporting and observability platform, giving teams a <strong>single source of truth</strong> for operational data</li>
+            <li>Optimized cloud resources to <strong>reduce costs</strong> while improving application performance</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-company">Activision Blizzard Media</div>
+            <div class="entry-date">Aug 2021 – Jul 2024</div>
+          </div>
+          <div class="entry-role">Senior DevOps Engineer</div>
+          <ul>
+            <li>Built and maintained <strong>automated pipelines</strong> for testing and deploying code at enterprise scale</li>
+            <li>Standardized infrastructure management with <strong>Terraform</strong> and <strong>Terragrunt</strong> for accuracy and repeatability</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-company">Freefall Consulting Inc.</div>
+            <div class="entry-date">Jun 2020 – Jul 2021</div>
+          </div>
+          <div class="entry-role">Owner / Contractor / Developer</div>
+          <ul>
+            <li>Founded and ran an independent consulting business, handling client engagements from start to finish</li>
+            <li>Contributed to the <strong>edX</strong> open-source platform (a leading learning platform used by MIT, Harvard, and others)</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-company">Flyr Inc.</div>
+            <div class="entry-date">May 2018 – Mar 2020</div>
+          </div>
+          <div class="entry-role">Data / DevOps Engineer</div>
+          <ul>
+            <li>Led development of an end-to-end <strong>ETL platform</strong> (Airflow, Kafka, <strong>BigQuery</strong>) ingesting <strong>terabyte-scale</strong> customer data</li>
+            <li>Rebuilt <strong>GCP</strong> architecture in Terraform so each new customer got a secure, isolated environment on demand</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-company">Agari</div>
+            <div class="entry-date">May 2016 – Apr 2018</div>
+          </div>
+          <div class="entry-role">Software / DevOps Engineer</div>
+          <ul>
+            <li>Researched and compiled IP address data to ensure the <strong>correctness of internal data stores</strong></li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-company">Breeze Labs</div>
+            <div class="entry-date">Mar 2015 – Apr 2016</div>
+          </div>
+          <div class="entry-role">Software &amp; Data Engineer</div>
+          <ul>
+            <li>Owned and enhanced the company's <strong>entire data and analytics infrastructure</strong></li>
+            <li>Built tools that improved the <strong>accuracy and reliability of reports</strong> to external parties</li>
+            <li>Integrated complex external data sources, from <strong>credit reports</strong> to vehicle location and mileage</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-company">Hearsay Social</div>
+            <div class="entry-date">Jul 2014 – Feb 2015</div>
+          </div>
+          <div class="entry-role">Software Engineer</div>
+          <ul>
+            <li>Designed and built a <strong>data warehouse</strong> product and its ETL process (S3, <strong>Redshift</strong>, Python)</li>
+            <li>Parallelized data extraction and transformation for faster loads, within strict client data-security requirements</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- EARLY CAREER -->
+      <div class="section">
+        <div class="section-title">Internships &amp; Early Career</div>
+
+        <div class="early-item">
+          <div class="early-head">GREE, Inc. <span>· Analytics Engineering Intern</span></div>
+          <div class="entry-date">2012</div>
+          <div class="early-desc">Built analytics dashboards from scratch and helped design analytics databases for games in development</div>
+        </div>
+
+
+        <div class="early-item">
+          <div class="early-head">Funzio <span>· Software Developer</span></div>
+          <div class="entry-date">2011</div>
+          <div class="early-desc">Analytics and database developer; built tools and dashboards used heavily across multiple games</div>
+        </div>
+
+
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="section">
+        <div class="section-title">Education</div>
+        <div class="early-item">
+          <div class="early-head">University of Waterloo <span>· Bachelor of Software Engineering (BSE)</span></div>
+          <div class="entry-date">2009 – 2015</div>
+        </div>
+      </div>
+
+      <!-- CERTIFICATIONS (compact) -->
+      <div class="section" style="margin-bottom:0;">
+        <div class="section-title">Technical Certifications</div>
+        <div class="cert-compact">
+          <span class="tag">Datadog Fundamentals &amp; APM (2026)</span>
+          <span class="tag">OpenTelemetry Associate (2025)</span>
+          <span class="tag">Terraform Associate (2024)</span>
+          <span class="tag">CKA &amp; CKAD (2024)</span>
+        </div>
+      </div>
+
+      </div><!-- /content-inner -->
+    </div><!-- /body -->
+  </div><!-- /page-wrap -->
+</body>
+</html>
